@@ -32,6 +32,22 @@ export class FormularioRepository{
         return this.repository.find();
     }
 
+    selectAllFormulario(): Promise<FormularioEntity[]> {
+        return this.repository.find({
+            join:{
+                alias: 'formulario',
+                leftJoinAndSelect:{
+                    formularioItems: 'formulario.formularioItems',
+                    item: 'formularioItems.item',
+                    itemsRango: 'item.itemsRango',
+                    rango: 'itemsRango.rango',
+                    subcategoria: 'item.subcategoria',
+                    categoria: 'subcategoria.categoria'
+                }
+            }
+        });
+    }
+
     selectById(id: number): Promise<FormularioEntity | undefined> {
         return this.repository.findOne({
             where: {id},

@@ -30,4 +30,9 @@ export class FormularioController{
     async updateDesactivar(@Param('id') id) {
         return await this.formularioRepository.updateEstadoDesActivo(id);
     }
+
+    @Get('formulario')
+    async findAllFormularioApp(@Res() response) {
+        return response.send(await this.formularioRepository.selectAllFormulario());
+    }
 }
