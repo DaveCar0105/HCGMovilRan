@@ -11,6 +11,7 @@ export class AppConstantDatabase{
 }
 
 export class AppConstantController{
+
     static readonly CARGUERA_CONTROLLER = 'carguera';
     static readonly CAUSA_CONTROLLER = 'causa';
     static readonly CLIENTE_CONTROLLER = 'cliente';
@@ -29,4 +30,5 @@ export class AppConstantController{
     static readonly ITEM_CONTROLLER = 'item';
     static readonly FORMULARIO_CONTROLLER = 'formulario';
     static readonly ITEM_RANGO_CONTROLLER = 'item-rango';
+    
 }

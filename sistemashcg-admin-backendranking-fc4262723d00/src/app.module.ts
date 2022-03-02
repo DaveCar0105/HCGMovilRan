@@ -9,6 +9,7 @@ import { CategoriaController } from './controllers/categoria.controller';
 import { CausaController } from './controllers/causa.controller';
 import { ClienteController } from './controllers/cliente.controller';
 import { FormularioController } from './controllers/formulario.controller';
+import { InformacionAuditoriaController } from './controllers/informacion-auditoria.controller';
 import { ItemRangoController } from './controllers/item-rango.controller';
 import { ItemController } from './controllers/item.controller';
 import { PaisController } from './controllers/pais.controller';
@@ -46,6 +47,7 @@ import { CategoriaRepository } from './repositories/categoria.repository';
 import { CausaRepository } from './repositories/causa.repository';
 import { ClienteRepository } from './repositories/cliente.repository';
 import { FormularioRepository } from './repositories/formulario.repository';
+import { InformacionAuditoriaRepository } from './repositories/informacion-auditoria.repository';
 import { ItemRangoRepository } from './repositories/item-rango.repository';
 import { ItemRepository } from './repositories/item.repository';
 import { PaisRepository } from './repositories/pais.repository';
@@ -93,8 +95,8 @@ const ENTIDADES = [
         host: 'localhost',
         port: 5432,
         username: 'postgres',
-        password: 'Av123456',
-        database: 'DBB_HCG_RANKING',
+        password: '12345678',
+        database: 'DBPRUEBA',
         entities: ENTIDADES,
         synchronize: true
       })
@@ -120,7 +122,8 @@ const ENTIDADES = [
     SubcategoriaController,
     ItemController,
     FormularioController,
-    ItemRangoController
+    ItemRangoController,
+    InformacionAuditoriaController,
   ],
   providers: [
     AppService,
@@ -143,7 +146,8 @@ const ENTIDADES = [
     SubcategoriaRepository,
     ItemRepository,
     FormularioRepository,
-    ItemRangoRepository
+    ItemRangoRepository,
+    InformacionAuditoriaRepository
   ],
 })
 export class AppModule {}
