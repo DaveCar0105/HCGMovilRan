@@ -1,4 +1,5 @@
 import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { ItemAuditoriaEntity } from "../item-auditoria.entity";
 import { AuditoriaAgenciaDetalleEntity } from "./auditoria-agencia-detalle.entity";
 
 @Entity('respuesta_auditoria')
@@ -39,10 +40,10 @@ export class RespuestaAuditoriaEntity{
     @JoinColumn({ name: 'id_auditoria_detalle' })
     auditoriaAgenciaDetalle?: AuditoriaAgenciaDetalleEntity;
 
-    // @Column({ name: 'id_item', nullable: true })
-    // idItem?: number;
+    @Column({ name: 'id_item', nullable: true })
+    idItem?: number;
 
-    // @ManyToOne(() => ItemEntity, itemE => itemE.respuestasFinca, { eager: true })
-    // @JoinColumn({ name: 'id_item' })
-    // item?: ItemEntity;
+    @ManyToOne(() => ItemAuditoriaEntity, itemE => itemE.respuestasAuditoria, { eager: true })
+    @JoinColumn({ name: 'id_item' })
+    item?: ItemAuditoriaEntity;
 }

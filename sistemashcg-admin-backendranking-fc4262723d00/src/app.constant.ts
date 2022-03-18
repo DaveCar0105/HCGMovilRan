@@ -29,6 +29,7 @@ export class AppConstantController{
     static readonly SUBCATEGORIA_CONTROLLER = 'subcategoria';
     static readonly ITEM_CONTROLLER = 'item';
     static readonly FORMULARIO_CONTROLLER = 'formulario';
+    static readonly FORMULARIO_AUDITORIA_CONTROLLER = 'formulario-auditoria';
     static readonly ITEM_RANGO_CONTROLLER = 'item-rango';
     
 }
