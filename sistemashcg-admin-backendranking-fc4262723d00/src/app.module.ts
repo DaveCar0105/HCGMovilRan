@@ -24,12 +24,22 @@ import { UsuarioController } from './controllers/usuario.controller';
 import { VariedadController } from './controllers/variedad.controller';
 import { AuditoriaCausaEntity } from './entities/auditoria-causa.entity';
 import { CargueraEntity } from './entities/carguera.entity';
+import { CategoriaAuditoriaEntity } from './entities/categoria-auditoria.entity';
 import { CategoriaEntity } from './entities/categoria.entity';
 import { CausaEntity } from './entities/causa.entity';
 import { ClienteEntity } from './entities/cliente.entity';
+import { FormularioAuditoriaEntity } from './entities/formulario-auditoria.entity';
+import { FormularioItemAuditoriaEntity } from './entities/formulario-item-auditoria.entity';
 import { FormularioItemEntity } from './entities/formulario-item.entity';
 import { FormularioEntity } from './entities/formulario.entity';
+import { AuditoriaAgenciaDetalleEntity } from './entities/formularios/auditoria-agencia-detalle.entity';
+import { AuditoriaAgenciaEntity } from './entities/formularios/auditoria-agencia.entity';
+import { EvaluacionDetalleEntity } from './entities/formularios/evaluacion-detalle.entity';
+import { EvaluacionFincaEntity } from './entities/formularios/evaluacion-finca.entity';
+import { RespuestaFincaEntity } from './entities/formularios/respuesta-finca.entity';
+import { RespuestaAuditoriaEntity } from './entities/formularios/respuestas-auditoria.entity';
 import { InformacionAuditoriaEntity } from './entities/informacion-auditoria.entity';
+import { ItemAuditoriaEntity } from './entities/item-auditoria.entity';
 import { ItemRangoEntity } from './entities/item-rango.entity';
 import { ItemEntity } from './entities/item.entity';
 import { PaisEntity } from './entities/pais.entity';
@@ -38,6 +48,7 @@ import { ProcesoMaltratoEntity } from './entities/proceso-maltrato.entity';
 import { ProcesoTamanoBotonEntity } from './entities/proceso-tamano-boton.entity';
 import { ProductoEntity } from './entities/producto.entity';
 import { RangoEntity } from './entities/rango.entity';
+import { SubcategoriaAuditoriaEntity } from './entities/subcategoria-auditoria.entity';
 import { SubcategoriaEntity } from './entities/subcategoria.entity';
 import { TipoCajaEntity } from './entities/tipo-caja.entity';
 import { UsuarioEntity } from './entities/usuario.entity';
@@ -83,7 +94,18 @@ const ENTIDADES = [
   ItemEntity,
   FormularioEntity,
   FormularioItemEntity,
-  ItemRangoEntity
+  ItemRangoEntity,
+  EvaluacionFincaEntity,
+  EvaluacionDetalleEntity,
+  RespuestaFincaEntity,
+  AuditoriaAgenciaEntity,
+  AuditoriaAgenciaDetalleEntity,
+  RespuestaAuditoriaEntity,
+  CategoriaAuditoriaEntity, 
+  SubcategoriaAuditoriaEntity,
+  ItemAuditoriaEntity,
+  FormularioItemAuditoriaEntity,
+  FormularioAuditoriaEntity
 ];
 
 @Module({
