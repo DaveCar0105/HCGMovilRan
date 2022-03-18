@@ -31,6 +31,59 @@ export class AuditoriaAgenciaEntity{
     })
     fechaAuditoria? : Date;
 
+
+    @Column({
+        name: 'cantidad_cajas', 
+        nullable: false
+    })
+    cantidadCajas: number;
+
+    @Column({
+        name: 'numero_tallos', 
+        nullable: false
+    })
+    numeroTallos: number;
+
+    @Column({
+        name: 'numero_ramos', 
+        nullable: false
+    })
+    numeroRamos: number;
+
+    @Column({
+        name: 'numero_ramos_muestreado', 
+        nullable: false
+    })
+    numeroRamosMuestreados: number;
+
+    @Column({
+        name: 'grado_auditoria', 
+        type: 'double precision',
+        nullable: false
+    })
+    gradoAuditoria: number;
+
+    @Column({
+        name: 'temperatura_caja', 
+        type: 'double precision',
+        nullable: false
+    })
+    temperaturaCaja: number;
+
+    @Column({
+        nullable: false,
+        length: AppConstantDatabase.DB_COLUMN_TEXT_TAMANIO,
+        name: 'numero_guia'
+    })
+    numeroGuia: string;
+
+    @Column({
+        nullable: false,
+        length: AppConstantDatabase.DB_COLUMN_TEXT_TAMANIO,
+        name: 'identificador_caja'
+    })
+    identificadorCaja: string;
+
     @Column({ name: 'id_postcosecha', nullable: true })
     idPostcosecha?: number;
 
