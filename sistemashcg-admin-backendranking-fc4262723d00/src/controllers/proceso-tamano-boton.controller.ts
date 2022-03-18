@@ -9,7 +9,6 @@ export class ProcesoTamanoBotonController{
 
     @Post()
     create(@Body() objetoDto) {
-        console.log(objetoDto);
         var newObject = new ProcesoTamanoBotonEntity;
         newObject.idUsuario = objetoDto[0]["usuarioId"];
         newObject.fechaAuditoria = objetoDto[0]["procesoTamanioBotonFecha"];
@@ -23,7 +22,6 @@ export class ProcesoTamanoBotonController{
         newObject.tamanoBoton3 = objetoDto[0]["procesoTamanioBotonTamanoBoton3"];
         newObject.tamanoBotonPromedio = objetoDto[0]["procesoTamanioBotonTamanoBotonPromedio"];
         newObject.numeroPetalos = objetoDto[0]["procesoTamanioBotonNumeroPetalos"];
-        console.log(newObject);
         return this.procesoTamanoBotonRepository.insert(newObject);
     }
 
