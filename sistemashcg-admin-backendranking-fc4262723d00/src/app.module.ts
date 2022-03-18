@@ -95,8 +95,8 @@ const ENTIDADES = [
         host: 'localhost',
         port: 5432,
         username: 'postgres',
-        password: '12345678',
-        database: 'DBPRUEBA',
+        password: '147369Cop!',
+        database: 'DBB_HCG_RANKING',
         entities: ENTIDADES,
         synchronize: true
       })
@@ -150,4 +150,4 @@ const ENTIDADES = [
     InformacionAuditoriaRepository
   ],
 })
-export class AppModule {}
+export class AppModule { }
