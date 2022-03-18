@@ -1,6 +1,7 @@
 import { AppConstantDatabase } from "src/app.constant";
 import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 import { FormularioItemEntity } from "./formulario-item.entity";
+import { RespuestaFincaEntity } from "./formularios/respuesta-finca.entity";
 import { ItemRangoEntity } from "./item-rango.entity";
 import { SubcategoriaEntity } from "./subcategoria.entity";
 
@@ -43,4 +44,7 @@ export class ItemEntity{
 
     @OneToMany(() => ItemRangoEntity, itemRango => itemRango.item)
     itemsRango?: ItemRangoEntity[];
+
+    @OneToMany(() => RespuestaFincaEntity, respueFinc => respueFinc.item)
+    respuestasFinca?: RespuestaFincaEntity[];
 }

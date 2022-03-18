@@ -1,5 +1,6 @@
 import { AppConstantDatabase } from "src/app.constant";
 import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { EvaluacionFincaEntity } from "./formularios/evaluacion-finca.entity";
 import { InformacionAuditoriaEntity } from "./informacion-auditoria.entity";
 import { ProcesoMaltratoEntity } from "./proceso-maltrato.entity";
 import { ProcesoTamanoBotonEntity } from "./proceso-tamano-boton.entity";
@@ -49,5 +50,8 @@ export class PostcosechaEntity{
 
     @OneToMany(() => ProcesoMaltratoEntity, procesoMaltrato => procesoMaltrato.postcosecha)
     procesosMaltrato?: ProcesoMaltratoEntity[];
+
+    @OneToMany(() => EvaluacionFincaEntity, evaluaFinc => evaluaFinc.postcosecha)
+    evaluacionesFinca?: EvaluacionFincaEntity[];
 
 }
