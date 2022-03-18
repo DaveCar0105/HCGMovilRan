@@ -1,9 +1,9 @@
 import { AppConstantDatabase } from "src/app.constant";
-import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
-import { AuditoriaAgenciaEntity } from "./formularios/auditoria-agencia.entity";
+import { Entity, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, Column, OneToMany } from "typeorm";
+import { SubcategoriaAuditoriaEntity } from "./subcategoria-auditoria.entity";
 
-@Entity('tipo_caja')
-export class TipoCajaEntity{
+@Entity('categoria_auditoria')
+export class CategoriaAuditoriaEntity{
     @PrimaryGeneratedColumn()
     id?: number;
 
@@ -22,13 +22,13 @@ export class TipoCajaEntity{
     @Column({
         nullable: false,
         length: AppConstantDatabase.DB_COLUMN_TEXT_TAMANIO,
-        name: 'tipo_caja_nombre'
+        name: 'categoria_nombre'
     })
-    tipoCajaNombre: string;
+    categoriaNombre: string;
 
     @Column({nullable: false, default: AppConstantDatabase.DB_COLUMN_ESTADO_DEFAULT_ACTIVO})
     estado: number;
 
-    @OneToMany(() => AuditoriaAgenciaEntity, evaluaFinc => evaluaFinc.tipoCaja)
-    auditoriaAgencia?: AuditoriaAgenciaEntity[];
+    @OneToMany(() => SubcategoriaAuditoriaEntity, subcategoria => subcategoria.categoria)
+    subcategorias?: SubcategoriaAuditoriaEntity[];
 }
