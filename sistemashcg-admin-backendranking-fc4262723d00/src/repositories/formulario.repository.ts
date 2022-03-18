@@ -58,7 +58,41 @@ export class FormularioRepository{
                 const categoriaId = item?.subcategoria?.categoria?.id;
                 const indexCategoria = categorias.findIndex(a => a.categoriaId==categoriaId);
                 if (indexCategoria!=-1){
-                    
+                    const categoriaSelected = categorias[indexCategoria];
+                    const subcategoriaId = item?.subcategoria?.id;
+                    const indexSubcategoria = categoriaSelected.subcategorias.findIndex(a => a.subcategoriaId==subcategoriaId);
+                    if(indexSubcategoria!=-1){
+                        const newRespuesta = new ItemD();
+                        newRespuesta.itemId = item?.id;
+                        newRespuesta.itemNombre = item?.itemNombre;
+                        newRespuesta.itemNombreMostrar = item?.itemNombre;
+                        for(const rango  of item?.itemsRango){
+                            const newRango = new RangoD();
+                            newRango.minimo = rango?.rango?.minimo;
+                            newRango.maximo = rango?.rango?.maximo;
+                            newRango.cantidadaDisminuir = rango?.rango?.cantidadDisminuir;
+                            newRespuesta.itemsRango.push(newRango);
+                        }
+                        categoriaSelected.subcategorias[indexSubcategoria].respuestas.push(newRespuesta);
+                    }else {
+                        const newSubcategoria = new SubcategoryD();
+                        newSubcategoria.subcategoriaId = item?.subcategoria?.id;
+                        newSubcategoria.subcategoriaNombre = item?.subcategoria?.subcategoriaNombre;
+                        newSubcategoria.subcategoriaNombreDesplazar = item?.subcategoria?.subcategoriaNombre;
+                        const newRespuesta = new ItemD();
+                        newRespuesta.itemId = item?.id;
+                        newRespuesta.itemNombre = item?.itemNombre;
+                        newRespuesta.itemNombreMostrar = item?.itemNombre;
+                        for(const rango  of item?.itemsRango){
+                            const newRango = new RangoD();
+                            newRango.minimo = rango?.rango?.minimo;
+                            newRango.maximo = rango?.rango?.maximo;
+                            newRango.cantidadaDisminuir = rango?.rango?.cantidadDisminuir;
+                            newRespuesta.itemsRango.push(newRango);
+                        }
+                        newSubcategoria.respuestas.push(newRespuesta);
+                        categoriaSelected.subcategorias.push(newSubcategoria);
+                    }
                 } else {
                     const newCategoria = new CategoryD();
                     newCategoria.categoriaId = categoriaId;
