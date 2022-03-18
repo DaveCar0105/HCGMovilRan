@@ -1,5 +1,6 @@
 import { AppConstantDatabase } from "src/app.constant";
 import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { AuditoriaAgenciaDetalleEntity } from "./formularios/auditoria-agencia-detalle.entity";
 import { EvaluacionDetalleEntity } from "./formularios/evaluacion-detalle.entity";
 import { ProcesoMaltratoEntity } from "./proceso-maltrato.entity";
 import { ProcesoTamanoBotonEntity } from "./proceso-tamano-boton.entity";
@@ -50,4 +51,7 @@ export class VariedadEntity{
 
     @OneToMany(() => EvaluacionDetalleEntity, evaluaDetall => evaluaDetall.variedad)
     evaluacionesDetalle?: EvaluacionDetalleEntity[];
+
+    @OneToMany(() =>  AuditoriaAgenciaDetalleEntity, evaluaDetall => evaluaDetall.variedad)
+    auditoriasDetalle?:  AuditoriaAgenciaDetalleEntity[];
 }

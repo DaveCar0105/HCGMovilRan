@@ -1,5 +1,6 @@
 import { AppConstantDatabase } from "src/app.constant";
 import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { AuditoriaAgenciaEntity } from "./formularios/auditoria-agencia.entity";
 import { EvaluacionFincaEntity } from "./formularios/evaluacion-finca.entity";
 import { InformacionAuditoriaEntity } from "./informacion-auditoria.entity";
 import { ProcesoMaltratoEntity } from "./proceso-maltrato.entity";
@@ -64,4 +65,7 @@ export class UsuarioEntity{
 
     @OneToMany(() => EvaluacionFincaEntity, evaluaFinc => evaluaFinc.usuario)
     evaluacionesFinca?: EvaluacionFincaEntity[];
+
+    @OneToMany(() => AuditoriaAgenciaEntity, evaluaFinc => evaluaFinc.usuario)
+    auditoriaAgencia?: AuditoriaAgenciaEntity[];
 }

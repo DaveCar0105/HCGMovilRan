@@ -1,5 +1,6 @@
 import { AppConstantDatabase } from "src/app.constant";
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { AuditoriaAgenciaEntity } from "./formularios/auditoria-agencia.entity";
 
 @Entity('tipo_caja')
 export class TipoCajaEntity{
@@ -27,4 +28,7 @@ export class TipoCajaEntity{
 
     @Column({nullable: false, default: AppConstantDatabase.DB_COLUMN_ESTADO_DEFAULT_ACTIVO})
     estado: number;
+
+    @OneToMany(() => AuditoriaAgenciaEntity, evaluaFinc => evaluaFinc.tipoCaja)
+    auditoriaAgencia?: AuditoriaAgenciaEntity[];
 }
